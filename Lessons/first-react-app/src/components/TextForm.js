@@ -3,22 +3,34 @@ import React ,{useState} from 'react'
 
 export default function TextForm(props) {
 
-    const [Text,setText]=useState("Enter text here")
+    const [Text,setText]=useState("")
 
     const handleOnChange= (e)=>{
-        console.log("handleOnChange")
         setText(e.target.value)
     }
 
     const OnClickUppercase= ()=>{
-        console.log("UpperCase Btn Clicked..." + Text)
         let newText=Text.toUpperCase()
         setText(newText)
     }
 
     const OnClickLowercase= ()=>{
-        console.log("UpperCase Btn Clicked..." + Text)
         let newText=Text.toLowerCase()
+        setText(newText)
+    }
+
+    const OnClickClear= ()=>{
+        let Text=''
+        setText(Text)
+    }
+
+    const OnClickUndo= ()=>{
+        let newText=Text.toString().substring(0,Text.length-1)
+        setText(newText)
+    }
+
+    const OnClickRedo= ()=>{
+        let newText=Text.toString().substring(0,Text.length)
         setText(newText)
     }
 
@@ -29,8 +41,11 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" value={Text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="10"></textarea>
             </div>
-            <button className="btn btn-primary" onClick={OnClickUppercase}>Convert to Uppercase</button>
+            <button className="btn btn-primary mx-3" onClick={OnClickUppercase}>Convert to Uppercase</button>
             <button className="btn btn-primary mx-3" onClick={OnClickLowercase}>Convert to Lowercase</button>
+            <button className="btn btn-primary mx-3" onClick={OnClickClear}>Clear All</button>
+            <button className="btn btn-primary mx-3" onClick={OnClickUndo}>Undo</button>
+            <button className="btn btn-primary mx-3" onClick={OnClickRedo}>Redo</button>
         </div>
         <div className="container my-3">
             <h2>Text Summary</h2>
