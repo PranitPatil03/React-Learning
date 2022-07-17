@@ -34,10 +34,50 @@ function App() {
     }
   }
 
+  const togglToBlue= ()=>{
+    if(mode==="light"){
+      setMode("#0d6efd"); 
+      document.body.style.backgroundColor='#0d6efd'
+      document.body.style.color='black'
+      showAlert("Dark mode is enabled" ,"success")
+    }
+    else{
+      setMode("light");
+      document.body.style.backgroundColor='white'
+      showAlert("Light mode is enabled" ,"success")
+    }
+  }
+  const togglToGreen= ()=>{
+    if(mode==="light"){
+      setMode("#198754"); 
+      document.body.style.backgroundColor='#198754'
+      document.body.style.color='black'
+      showAlert("Dark mode is enabled" ,"success")
+    }
+    else{
+      setMode("light");
+      document.body.style.backgroundColor='white'
+      showAlert("Light mode is enabled" ,"success")
+    }
+  }
+  const togglToYellow= ()=>{
+    if(mode==="light"){
+      setMode("#ffc107"); 
+      document.body.style.backgroundColor='#ffc107'
+      document.body.style.color='black'
+      showAlert("Dark mode is enabled" ,"success")
+    }
+    else{
+      setMode("light");
+      document.body.style.backgroundColor='white'
+      showAlert("Light mode is enabled" ,"success")
+    }
+  }
+  
   return (
     <>
       {/* <Navbar /> */}
-      <Navbar title="text-app" mode={mode} togglemode={togglemode}/>
+      <Navbar title="text-app" mode={mode} togglemode={togglemode} togglToBlue={togglToBlue} togglToGreen={togglToGreen} togglToYellow={togglToYellow} />
       <Alert alert={alert}/>
       <div className="container my-3">
       <TextForm heading="TextUtiles" mode={mode} showAlert={showAlert}/>
@@ -48,3 +88,4 @@ function App() {
 }
 
 export default App;
+

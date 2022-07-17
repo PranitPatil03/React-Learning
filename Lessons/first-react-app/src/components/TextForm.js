@@ -32,6 +32,8 @@ export default function TextForm(props) {
         setText(newText)
     }
 
+    // style={{color:props.mode==='dark'?'white':'black'}}
+
     return (
         <>
         <div className="container" style={{color:props.mode==='dark'?'white':'black'}} >
@@ -49,7 +51,7 @@ export default function TextForm(props) {
         </div>
         <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
             <h2>Text Summary</h2>
-            <p> {Text.split(" ").length} Words And {Text.length} Characters</p>
+            <p> {(Text.split(" ").length)-1} Words And {Text.length} Characters</p>
             <p>{0.008 * Text.split(" ").length} Minutes to Read.</p>
             <h2>Preview</h2>
             <p>{Text}</p>
