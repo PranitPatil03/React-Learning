@@ -12,25 +12,23 @@ export default function TextForm(props) {
     const OnClickUppercase= ()=>{
         let newText=Text.toUpperCase()
         setText(newText)
+        props.showAlert("Text is Converted into UpperCase","success")
     }
 
     const OnClickLowercase= ()=>{
         let newText=Text.toLowerCase()
         setText(newText)
+        props.showAlert("Text is Converted into LowerCase","success")
     }
 
     const OnClickClear= ()=>{
         let Text=''
         setText(Text)
+        props.showAlert("Text is Clear","success")
     }
 
     const OnClickUndo= ()=>{
         let newText=Text.toString().substring(0,Text.length-1)
-        setText(newText)
-    }
-
-    const OnClickRedo= ()=>{
-        let newText=Text.toString().substring(0,Text.length)
         setText(newText)
     }
 
@@ -46,7 +44,6 @@ export default function TextForm(props) {
             <button className={`btn btn-${props.mode === 'light'?'dark':'light'} mx-3`} onClick={OnClickLowercase}>Convert to Lowercase</button>
             <button className={`btn btn-${props.mode === 'light'?'dark':'light'} mx-3`} onClick={OnClickClear}>Clear All</button>
             <button className={`btn btn-${props.mode === 'light'?'dark':'light'} mx-3`} onClick={OnClickUndo}>Undo</button>
-            <button className={`btn btn-${props.mode === 'light'?'dark':'light'} mx-3`} onClick={OnClickRedo}>Redo</button>
             </div>
             
         </div>
