@@ -32,7 +32,6 @@ export default function TextForm(props) {
         setText(newText)
     }
 
-    // style={{color:props.mode==='dark'?'white':'black'}}
 
     return (
         <>
