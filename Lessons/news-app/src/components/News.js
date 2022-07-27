@@ -3,6 +3,8 @@ import NewsItem from './NewsItem'
 import Spinner from './Spinner'
 import PropTypes from 'prop-types'
 
+  
+
 export class News extends Component {
 
     static defaultProps = {
@@ -66,6 +68,7 @@ export class News extends Component {
 
     render() {
         return (
+            <>
             <div className="container my-3 mb-3">
                 <h1 className="text-center my-3">Insta News -Top Daily Headlines</h1>
                 {this.state.loading && <Spinner/>}
@@ -83,6 +86,7 @@ export class News extends Component {
                     </div>
                 </div>
             </div>
+        </>
         )
     }
 }
