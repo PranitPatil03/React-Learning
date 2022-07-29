@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export class Navbar extends Component {
     render() {
@@ -27,6 +27,7 @@ export class Navbar extends Component {
                                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                     <button className="btn btn-outline-success" type="submit">Search</button>
                                 </form>
+
                             </div>
                         </div>
                     </nav>

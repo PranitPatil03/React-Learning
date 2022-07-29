@@ -70,14 +70,14 @@ export class News extends Component {
         return (
             <>
             <div className="container my-3 mb-3">
-                <h1 className="text-center my-3">Insta News -Top Daily Headlines</h1>
+                <h1 className="text-center my-4 mb-5">Insta News -Top Daily Headlines</h1>
                 {this.state.loading && <Spinner/>}
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className="col-md-4" key={element.url}>
                             <NewsItem title={element.title ? element.title.slice(0, 45) : ""}
                                 description={element.description ? element.description.slice(0, 88) : ""} imgUrl={element.urlToImage}
-                                newsUrl={element.url} />
+                                newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                         </div>
                     })}
                     <div className="container my-5 d-flex justify-content-between">

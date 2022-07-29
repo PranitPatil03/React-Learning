@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
 import Navbar from './components/Navbar';
-import News from './components/News';
+import News from './components/News'
 import {
   BrowserRouter,
   Routes,
@@ -26,7 +26,6 @@ export default class App extends Component {
           </Routes>
         </BrowserRouter>
       </>
-
     )
   }
 }
