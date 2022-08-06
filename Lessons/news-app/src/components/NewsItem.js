@@ -14,6 +14,7 @@ export class NewsItem extends Component {
         return (
             <div className="container">
                 <div className="card">
+                <div style={{display: 'flex',justifyContent: 'flex-end',position: 'absolute',right: '0'}}></div>
                     <span class="position-absolute top-0 translate-middle badge rounded-pill bg-secondary" style={{left:"90%",zIndex:"1"}}>
                         {source}
                     </span>

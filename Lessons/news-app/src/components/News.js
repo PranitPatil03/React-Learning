@@ -66,7 +66,7 @@ export class News extends Component {
     render() {
         return (
             <>
-                <h1 className="text-center my-3 mb-4">Insta News - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
+                <h1 className="text-center my-3 mb-4" style={{ margin: '35px 0px', marginTop:'90px',paddingTop:'40px'}}>Insta News - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
