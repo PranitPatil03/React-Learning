@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class NewsItem extends Component {
+const NewsItem = (props) => {
 
-    constructor() {
-        super();
-        console.log()
-    }
+    let { title, description, imgUrl, newsUrl, author, date, source } = props
 
+<<<<<<< HEAD
     render() {
 
         let { title, description, imgUrl, newsUrl, author, date, source } = this.props
@@ -25,10 +23,24 @@ export class NewsItem extends Component {
                         <p class="card-text"><small class="text-muted">by {!author ? "unknown" : author} on {new Date(date).toGMTString()}</small></p>
                         <a rel="noreferrer" href={newsUrl} className="btn btn-sm btn-primary">Read more</a>
                     </div>
+=======
+    return (
+        <div className="container">
+            <div className="card">
+                <span class="position-absolute top-0 translate-middle badge rounded-pill bg-secondary" style={{ left: "90%", zIndex: "1" }}>
+                    {source}
+                </span>
+                <img src={!imgUrl ? "https://www.reuters.com/resizer/GIDjJE7brmF6FuqAiT38D9ILOyk=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/N2VZ77IOWRLRPN4S6Q5RJHJPHY.jpg" : imgUrl} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{title}...</h5>
+                    <p className="card-text">{description}...</p>
+                    <p class="card-text"><small class="text-muted">by {!author ? "unknown" : author} on {new Date(date).toGMTString()}</small></p>
+                    <a rel="noreferrer" href={newsUrl} className="btn btn-sm btn-primary">Read more</a>
+>>>>>>> 590dd75b69ee8712613f197cd02da8d4e471c168
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default NewsItem
